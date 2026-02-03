@@ -148,23 +148,11 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"hrms_guide_bot.tasks.all"
-# 	],
-# 	"daily": [
-# 		"hrms_guide_bot.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"hrms_guide_bot.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"hrms_guide_bot.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"hrms_guide_bot.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"hrms_guide_bot.hrms_guide_bot.doctype.nav_index.nav_index.rebuild_nav_index"
+	],
+}
 
 # Testing
 # -------
@@ -242,3 +230,8 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+# Page specific JS
+app_include_js = [
+    "/assets/hrms_guide_bot/page/hrms-guide-bot/hrms-guide-bot.js",
+    "/assets/hrms_guide_bot/js/hrms_guide_bot_widget.js"
+]

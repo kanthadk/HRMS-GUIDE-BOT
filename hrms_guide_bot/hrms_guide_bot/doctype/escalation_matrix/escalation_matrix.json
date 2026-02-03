@@ -1,0 +1,77 @@
+{
+    "actions": [],
+    "creation": "2024-10-22 17:15:23.123456",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "intent",
+        "team",
+        "ticket_type",
+        "required_fields",
+        "redaction_fields",
+        "sla_hours"
+    ],
+    "fields": [
+        {
+            "fieldname": "intent",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Intent Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "team",
+            "fieldtype": "Select",
+            "label": "Team",
+            "options": "HR\nIT\nPayroll\nManager",
+            "reqd": 1
+        },
+        {
+            "fieldname": "ticket_type",
+            "fieldtype": "Link",
+            "label": "Ticket Type",
+            "options": "Issue",
+            "reqd": 1
+        },
+        {
+            "fieldname": "required_fields",
+            "fieldtype": "Text",
+            "label": "Required Fields (JSON)"
+        },
+        {
+            "fieldname": "redaction_fields",
+            "fieldtype": "Text",
+            "label": "Redaction Fields (JSON)"
+        },
+        {
+            "default": "24",
+            "fieldname": "sla_hours",
+            "fieldtype": "Int",
+            "label": "SLA (Hours)"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-10-22 17:15:23.123456",
+    "modified_by": "Administrator",
+    "module": "Hrms Guide Bot",
+    "name": "EscalationMatrix",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

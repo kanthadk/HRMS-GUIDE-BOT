@@ -1,0 +1,57 @@
+{
+    "actions": [],
+    "creation": "2024-10-22 17:15:23.123456",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "domain",
+        "document_owner",
+        "company"
+    ],
+    "fields": [
+        {
+            "fieldname": "domain",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Domain",
+            "options": "Leave\nPayroll\nExpense\nGeneral",
+            "reqd": 1
+        },
+        {
+            "fieldname": "document_owner",
+            "fieldtype": "Link",
+            "label": "Owner",
+            "options": "User"
+        },
+        {
+            "fieldname": "company",
+            "fieldtype": "Link",
+            "label": "Company",
+            "options": "Company"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-10-22 17:15:23.123456",
+    "modified_by": "Administrator",
+    "module": "Hrms Guide Bot",
+    "name": "PolicyDocument",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

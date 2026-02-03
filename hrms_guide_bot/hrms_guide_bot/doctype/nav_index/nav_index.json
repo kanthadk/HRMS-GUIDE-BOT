@@ -1,0 +1,87 @@
+{
+    "actions": [],
+    "creation": "2024-10-22 17:15:23.123456",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "label",
+        "route",
+        "create_route",
+        "synonyms",
+        "required_roles",
+        "type",
+        "reference_doctype",
+        "popularity_score"
+    ],
+    "fields": [
+        {
+            "fieldname": "label",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Label",
+            "reqd": 1
+        },
+        {
+            "fieldname": "route",
+            "fieldtype": "Data",
+            "label": "Route"
+        },
+        {
+            "fieldname": "create_route",
+            "fieldtype": "Data",
+            "label": "Create Route"
+        },
+        {
+            "fieldname": "synonyms",
+            "fieldtype": "Text",
+            "label": "Synonyms (JSON)"
+        },
+        {
+            "fieldname": "required_roles",
+            "fieldtype": "Text",
+            "label": "Required Roles (JSON)"
+        },
+        {
+            "fieldname": "type",
+            "fieldtype": "Select",
+            "label": "Type",
+            "options": "DocType\nReport\nPage\nWorkspace"
+        },
+        {
+            "fieldname": "reference_doctype",
+            "fieldtype": "Link",
+            "label": "Reference DocType",
+            "options": "DocType"
+        },
+        {
+            "default": "0",
+            "fieldname": "popularity_score",
+            "fieldtype": "Int",
+            "label": "Popularity Score"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-10-22 17:15:23.123456",
+    "modified_by": "Administrator",
+    "module": "Hrms Guide Bot",
+    "name": "NavIndex",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

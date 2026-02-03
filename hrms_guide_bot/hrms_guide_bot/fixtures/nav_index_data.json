@@ -1,0 +1,26 @@
+[
+    {
+        "label": "Leave Application",
+        "route": "/app/leave-application",
+        "create_route": "/app/leave-application/new",
+        "reference_doctype": "Leave Application",
+        "type": "DocType",
+        "popularity_score": 100
+    },
+    {
+        "label": "Expense Claim",
+        "route": "/app/expense-claim",
+        "create_route": "/app/expense-claim/new",
+        "reference_doctype": "Expense Claim",
+        "type": "DocType",
+        "popularity_score": 90
+    },
+    {
+        "label": "Employee",
+        "route": "/app/employee",
+        "create_route": "/app/employee/new",
+        "reference_doctype": "Employee",
+        "type": "DocType",
+        "popularity_score": 80
+    }
+]

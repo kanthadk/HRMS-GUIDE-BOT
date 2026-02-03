@@ -1,0 +1,72 @@
+{
+    "actions": [],
+    "creation": "2024-10-22 17:15:23.123456",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "event_type",
+        "user",
+        "timestamp",
+        "payload",
+        "latency_ms"
+    ],
+    "fields": [
+        {
+            "fieldname": "event_type",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Event Type",
+            "options": "intent_detected\npermission_checked\nnav_shown\nroute_opened\npolicy_used\nanswer_helpful\nticket_created\ntour_failed\ntour_completed",
+            "reqd": 1
+        },
+        {
+            "fieldname": "user",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "User",
+            "options": "User",
+            "reqd": 1
+        },
+        {
+            "fieldname": "timestamp",
+            "fieldtype": "Datetime",
+            "label": "Timestamp",
+            "default": "Now"
+        },
+        {
+            "fieldname": "payload",
+            "fieldtype": "Code",
+            "label": "Payload",
+            "options": "JSON"
+        },
+        {
+            "fieldname": "latency_ms",
+            "fieldtype": "Float",
+            "label": "Latency (ms)"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-10-22 17:15:23.123456",
+    "modified_by": "Administrator",
+    "module": "Hrms Guide Bot",
+    "name": "BotTelemetry",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

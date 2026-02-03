@@ -1,0 +1,62 @@
+{
+    "actions": [],
+    "creation": "2024-10-22 17:15:23.123456",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "policy_version",
+        "section_label",
+        "chunk_text",
+        "embedding_json"
+    ],
+    "fields": [
+        {
+            "fieldname": "policy_version",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Policy Version",
+            "options": "PolicyVersion",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_label",
+            "fieldtype": "Data",
+            "label": "Section Label"
+        },
+        {
+            "fieldname": "chunk_text",
+            "fieldtype": "Text Editor",
+            "label": "Chunk Text"
+        },
+        {
+            "fieldname": "embedding_json",
+            "fieldtype": "Code",
+            "label": "Embedding (JSON)",
+            "options": "JSON"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-10-22 17:15:23.123456",
+    "modified_by": "Administrator",
+    "module": "Hrms Guide Bot",
+    "name": "PolicyChunk",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

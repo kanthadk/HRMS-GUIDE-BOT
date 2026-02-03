@@ -1,0 +1,80 @@
+{
+    "charts": [
+        {
+            "label": "Bot Health",
+            "chart_name": "Bot Health",
+            "type": "Chart"
+        }
+    ],
+    "content": [
+        {
+            "label": "Policy Management",
+            "type": "Header"
+        },
+        {
+            "label": "Policy Document",
+            "name": "PolicyDocument",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "label": "Policy Version",
+            "name": "PolicyVersion",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "label": "Policy Chunk",
+            "name": "PolicyChunk",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "label": "Navigation & Setup",
+            "type": "Header"
+        },
+        {
+            "label": "Nav Index",
+            "name": "NavIndex",
+            "type": "Link"
+        },
+        {
+            "label": "Escalation Matrix",
+            "name": "EscalationMatrix",
+            "type": "Link"
+        },
+        {
+            "label": "Monitoring",
+            "type": "Header"
+        },
+        {
+            "label": "Bot Telemetry",
+            "name": "BotTelemetry",
+            "type": "Link"
+        }
+    ],
+    "creation": "2024-10-22 17:15:23.123456",
+    "docstatus": 0,
+    "doctype": "Workspace",
+    "icon": "robot",
+    "idx": 0,
+    "indicator_color": "green",
+    "is_standard": 1,
+    "label": "HRMS Guide Bot Admin",
+    "modified": "2024-10-22 17:15:23.123456",
+    "modified_by": "Administrator",
+    "module": "Hrms Guide Bot",
+    "name": "HRMS Guide Bot Admin",
+    "owner": "Administrator",
+    "public": 1,
+    "roles": [
+        {
+            "role": "System Manager"
+        },
+        {
+            "role": "HR Manager"
+        }
+    ],
+    "sequence_id": 1,
+    "title": "HRMS Guide Bot Admin"
+}
