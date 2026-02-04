@@ -1,4 +1,5 @@
 frappe.ready(function () {
+    console.log("HRMS Guide Bot Widget Loading...");
     // Only load if user is logged in
     if (frappe.session.user === 'Guest') return;
 
@@ -23,7 +24,7 @@ frappe.ready(function () {
                 <span class="close-bot">&times;</span>
             </div>
             <div class="hrms-bot-messages">
-                <div class="message bot">
+                <div class="hrms-bot-message bot">
                     Hello ${frappe.session.user_fullname}! asking me about HR policies or navigation.
                 </div>
             </div>
@@ -89,19 +90,19 @@ frappe.ready(function () {
             flex-direction: column;
             gap: 8px;
         }
-        .message {
+        .hrms-bot-message {
             max-width: 80%;
             padding: 8px 12px;
             border-radius: 12px;
             font-size: 14px;
             line-height: 1.4;
         }
-        .message.bot {
+        .hrms-bot-message.bot {
             background: var(--bg-light-gray, #f4f5f6);
             align-self: flex-start;
             border-bottom-left-radius: 2px;
         }
-        .message.user {
+        .hrms-bot-message.user {
             background: var(--primary, #2490ef);
             color: white;
             align-self: flex-end;
@@ -142,13 +143,13 @@ frappe.ready(function () {
     const $messages = $window.find('.hrms-bot-messages');
 
     function addMessage(text, sender) {
-        const $msg = $(`<div class="message ${sender}">${text}</div>`);
+        const $msg = $(`<div class="hrms-bot-message ${sender}">${text}</div>`);
         $messages.append($msg);
         $messages.scrollTop($messages[0].scrollHeight);
     }
 
     function addAction(label, url) {
-        const $action = $(`<div class="message bot"><a class="bot-action-link">${label}</a></div>`);
+        const $action = $(`<div class="hrms-bot-message bot"><a class="bot-action-link">${label}</a></div>`);
         $action.find('a').on('click', () => frappe.set_route(url));
         $messages.append($action);
         $messages.scrollTop($messages[0].scrollHeight);
