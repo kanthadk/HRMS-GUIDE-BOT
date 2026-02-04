@@ -22,7 +22,7 @@ def rebuild_nav_index():
 	for dt in doctypes:
 		frappe.get_doc({
 			"doctype": "NavIndex",
-			"label": [dt.name],
+			"label": dt.name,
 			"route": f"/app/{frappe.scrub(dt.name)}",
 			"create_route": f"/app/{frappe.scrub(dt.name)}/new",
 			"reference_doctype": dt.name,
