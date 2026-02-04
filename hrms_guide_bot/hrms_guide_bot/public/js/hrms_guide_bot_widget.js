@@ -1,23 +1,26 @@
-frappe.ready(function () {
-    console.log("HRMS Guide Bot Widget Loading...");
-    // Only load if user is logged in
-    if (frappe.session.user === 'Guest') return;
+const initBotWidget = setInterval(() => {
+    if (window.frappe && window.frappe.ready) {
+        clearInterval(initBotWidget);
+        frappe.ready(function () {
+            console.log("HRMS Guide Bot Widget Loading...");
+            // Only load if user is logged in
+            if (frappe.session.user === 'Guest') return;
 
-    // Check existing
-    if ($('#hrms-guide-bot-root').length > 0) return;
+            // Check existing
+            if ($('#hrms-guide-bot-root').length > 0) return;
 
-    // Create wrapper
-    const $wrapper = $(`<div id="hrms-guide-bot-root" class="hrms-bot-widget closed"></div>`).appendTo('body');
+            // Create wrapper
+            const $wrapper = $(`<div id="hrms-guide-bot-root" class="hrms-bot-widget closed"></div>`).appendTo('body');
 
-    // Create Toggle Button
-    const $toggle = $(`
+            // Create Toggle Button
+            const $toggle = $(`
         <button class="hrms-bot-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
         </button>
     `).appendTo($wrapper);
 
-    // Create Chat Window
-    const $window = $(`
+            // Create Chat Window
+            const $window = $(`
         <div class="hrms-bot-window">
             <div class="hrms-bot-header">
                 <h3>HR Assistant</h3>
@@ -35,8 +38,8 @@ frappe.ready(function () {
         </div>
     `).appendTo($wrapper);
 
-    // Styles (Injected here for simplicity, ideally in .css)
-    const styles = `
+            // Styles (Injected here for simplicity, ideally in .css)
+            const styles = `
         .hrms-bot-widget {
             position: fixed;
             bottom: 20px;
@@ -129,70 +132,70 @@ frappe.ready(function () {
         }
     `;
 
-    $('<style>').text(styles).appendTo('head');
+            $('<style>').text(styles).appendTo('head');
 
-    // Logic
-    function toggleChat() {
-        $wrapper.toggleClass('open');
-    }
-
-    $toggle.on('click', toggleChat);
-    $window.find('.close-bot').on('click', toggleChat);
-
-    const $input = $window.find('input');
-    const $messages = $window.find('.hrms-bot-messages');
-
-    function addMessage(text, sender) {
-        const $msg = $(`<div class="hrms-bot-message ${sender}">${text}</div>`);
-        $messages.append($msg);
-        $messages.scrollTop($messages[0].scrollHeight);
-    }
-
-    function addAction(label, url) {
-        const $action = $(`<div class="hrms-bot-message bot"><a class="bot-action-link">${label}</a></div>`);
-        $action.find('a').on('click', () => frappe.set_route(url));
-        $messages.append($action);
-        $messages.scrollTop($messages[0].scrollHeight);
-    }
-
-    function sendMessage() {
-        const text = $input.val().trim();
-        if (!text) return;
-
-        addMessage(text, 'user');
-        $input.val('');
-
-        // Call API
-        frappe.call({
-            method: 'hrms_guide_bot.hrms_guide_bot.api.chat',
-            args: {
-                message: text,
-                context: {
-                    route: frappe.get_route_str()
-                }
-            },
-            callback: function (r) {
-                if (r.message) {
-                    const data = r.message;
-
-                    // Handle Payload based on intent
-                    if (data.payload.message) {
-                        addMessage(data.payload.message, 'bot');
-                    }
-                    if (data.payload.answer) {
-                        addMessage(data.payload.answer, 'bot');
-                    }
-                    if (data.payload.open_url) {
-                        addAction(`Open ${data.payload.path[0]}`, data.payload.open_url);
-                        // Auto redirect if confidence is high? No, let user click.
-                    }
-                }
+            // Logic
+            function toggleChat() {
+                $wrapper.toggleClass('open');
             }
-        });
-    }
 
-    $window.find('.send-btn').on('click', sendMessage);
-    $input.on('keypress', (e) => {
-        if (e.which === 13) sendMessage();
-    });
-});
+            $toggle.on('click', toggleChat);
+            $window.find('.close-bot').on('click', toggleChat);
+
+            const $input = $window.find('input');
+            const $messages = $window.find('.hrms-bot-messages');
+
+            function addMessage(text, sender) {
+                const $msg = $(`<div class="hrms-bot-message ${sender}">${text}</div>`);
+                $messages.append($msg);
+                $messages.scrollTop($messages[0].scrollHeight);
+            }
+
+            function addAction(label, url) {
+                const $action = $(`<div class="hrms-bot-message bot"><a class="bot-action-link">${label}</a></div>`);
+                $action.find('a').on('click', () => frappe.set_route(url));
+                $messages.append($action);
+                $messages.scrollTop($messages[0].scrollHeight);
+            }
+
+            function sendMessage() {
+                const text = $input.val().trim();
+                if (!text) return;
+
+                addMessage(text, 'user');
+                $input.val('');
+
+                // Call API
+                frappe.call({
+                    method: 'hrms_guide_bot.hrms_guide_bot.api.chat',
+                    args: {
+                        message: text,
+                        context: {
+                            route: frappe.get_route_str()
+                        }
+                    },
+                    callback: function (r) {
+                        if (r.message) {
+                            const data = r.message;
+
+                            // Handle Payload based on intent
+                            if (data.payload.message) {
+                                addMessage(data.payload.message, 'bot');
+                            }
+                            if (data.payload.answer) {
+                                addMessage(data.payload.answer, 'bot');
+                            }
+                            if (data.payload.open_url) {
+                                addAction(`Open ${data.payload.path[0]}`, data.payload.open_url);
+                                // Auto redirect if confidence is high? No, let user click.
+                            }
+                        }
+                    }
+                });
+            }
+
+            $window.find('.send-btn').on('click', sendMessage);
+            $input.on('keypress', (e) => {
+                if (e.which === 13) sendMessage();
+            });
+        });
