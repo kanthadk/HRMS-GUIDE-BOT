@@ -199,3 +199,5 @@ const initBotWidget = setInterval(() => {
                 if (e.which === 13) sendMessage();
             });
         });
+    }
+}, 500);
