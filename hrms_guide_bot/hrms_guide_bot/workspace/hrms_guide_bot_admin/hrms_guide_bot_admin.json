@@ -6,53 +6,7 @@
             "type": "Chart"
         }
     ],
-    "content": [
-        {
-            "label": "Policy Management",
-            "type": "Header"
-        },
-        {
-            "label": "Policy Document",
-            "name": "PolicyDocument",
-            "onboard": 1,
-            "type": "Link"
-        },
-        {
-            "label": "Policy Version",
-            "name": "PolicyVersion",
-            "onboard": 0,
-            "type": "Link"
-        },
-        {
-            "label": "Policy Chunk",
-            "name": "PolicyChunk",
-            "onboard": 0,
-            "type": "Link"
-        },
-        {
-            "label": "Navigation & Setup",
-            "type": "Header"
-        },
-        {
-            "label": "Nav Index",
-            "name": "NavIndex",
-            "type": "Link"
-        },
-        {
-            "label": "Escalation Matrix",
-            "name": "EscalationMatrix",
-            "type": "Link"
-        },
-        {
-            "label": "Monitoring",
-            "type": "Header"
-        },
-        {
-            "label": "Bot Telemetry",
-            "name": "BotTelemetry",
-            "type": "Link"
-        }
-    ],
+    "content": "[{\"label\": \"Policy Management\", \"type\": \"Header\"}, {\"label\": \"Policy Document\", \"name\": \"PolicyDocument\", \"onboard\": 1, \"type\": \"Link\"}, {\"label\": \"Policy Version\", \"name\": \"PolicyVersion\", \"onboard\": 0, \"type\": \"Link\"}, {\"label\": \"Policy Chunk\", \"name\": \"PolicyChunk\", \"onboard\": 0, \"type\": \"Link\"}, {\"label\": \"Navigation & Setup\", \"type\": \"Header\"}, {\"label\": \"Nav Index\", \"name\": \"NavIndex\", \"type\": \"Link\"}, {\"label\": \"Escalation Matrix\", \"name\": \"EscalationMatrix\", \"type\": \"Link\"}, {\"label\": \"Monitoring\", \"type\": \"Header\"}, {\"label\": \"Bot Telemetry\", \"name\": \"BotTelemetry\", \"type\": \"Link\"}]",
     "creation": "2024-10-22 17:15:23.123456",
     "docstatus": 0,
     "doctype": "Workspace",
