@@ -231,7 +231,4 @@ scheduler_events = {
 # }
 
 # Page specific JS
-app_include_js = [
-    "/assets/hrms_guide_bot/page/hrms-guide-bot/hrms-guide-bot.js",
-    "/assets/hrms_guide_bot/js/hrms_guide_bot_widget.js"
-]
+app_include_js = "/assets/hrms_guide_bot/js/hrms_guide_bot_widget.js"

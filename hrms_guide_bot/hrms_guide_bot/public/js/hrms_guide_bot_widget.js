@@ -1,8 +1,9 @@
 const initBotWidget = setInterval(() => {
     if (window.frappe && window.frappe.ready) {
         clearInterval(initBotWidget);
+        console.log("[HRMS Bot] Frappe detected. Initializing widget...");
         frappe.ready(function () {
-            console.log("HRMS Guide Bot Widget Loading...");
+            console.log("[HRMS Bot] frappe.ready fired. Checking user...");
             // Only load if user is logged in
             if (frappe.session.user === 'Guest') return;
 
