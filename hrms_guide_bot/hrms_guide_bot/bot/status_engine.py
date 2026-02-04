@@ -49,7 +49,7 @@ class StatusEngine:
 		if not records:
 			return {"message": f"You have no recent {doctype} records."}
 			
-		from hrms_guide_bot.hrms_guide_bot.doctype.bot_telemetry.bot_telemetry import log_event
+		from hrms_guide_bot.hrms_guide_bot.doctype.bottelemetry.bottelemetry import log_event
 		log_event("intent_detected", self.user, {"intent": "STATUS", "doctype": doctype})
 			
 		return {

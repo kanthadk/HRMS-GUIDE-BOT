@@ -1,5 +1,5 @@
 import frappe
-from hrms_guide_bot.hrms_guide_bot.doctype.bot_telemetry.bot_telemetry import log_event
+from hrms_guide_bot.hrms_guide_bot.doctype.bottelemetry.bottelemetry import log_event
 
 class EscalationEngine:
 	def __init__(self, user=None):

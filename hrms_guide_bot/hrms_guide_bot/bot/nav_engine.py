@@ -45,7 +45,7 @@ class NavEngine:
 			# match found
 			top_match = allowed_results[0]
 			
-			from hrms_guide_bot.hrms_guide_bot.doctype.bot_telemetry.bot_telemetry import log_event
+			from hrms_guide_bot.hrms_guide_bot.doctype.bottelemetry.bottelemetry import log_event
 			log_event("nav_shown", self.user, {"query": query, "route": top_match["route"]})
 
 			return {
