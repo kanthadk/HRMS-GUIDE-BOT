@@ -150,7 +150,7 @@ required_apps = ["hrms"]
 
 scheduler_events = {
 	"daily": [
-		"hrms_guide_bot.hrms_guide_bot.doctype.nav_index.nav_index.rebuild_nav_index"
+		"hrms_guide_bot.hrms_guide_bot.doctype.navindex.navindex.rebuild_nav_index"
 	],
 }
 
